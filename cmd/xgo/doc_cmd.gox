@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/doc"
+)
+
+short "Show documentation for package or symbol"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

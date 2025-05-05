@@ -3,16 +3,95 @@
 package main
 
 import (
-	"fmt"
 	"github.com/goplus/cobra/xcmd"
-	"github.com/goplus/gop/env"
-	"github.com/qiniu/x/stringutil"
-	"runtime"
+	bug1 "github.com/goplus/gop/cmd/internal/bug"
+	build1 "github.com/goplus/gop/cmd/internal/build"
+	clean1 "github.com/goplus/gop/cmd/internal/clean"
+	doc1 "github.com/goplus/gop/cmd/internal/doc"
+	env1 "github.com/goplus/gop/cmd/internal/env"
+	gengo1 "github.com/goplus/gop/cmd/internal/gengo"
+	gopfmt1 "github.com/goplus/gop/cmd/internal/gopfmt"
+	gopget1 "github.com/goplus/gop/cmd/internal/gopget"
+	install1 "github.com/goplus/gop/cmd/internal/install"
+	mod1 "github.com/goplus/gop/cmd/internal/mod"
+	run1 "github.com/goplus/gop/cmd/internal/run"
+	serve1 "github.com/goplus/gop/cmd/internal/serve"
+	test1 "github.com/goplus/gop/cmd/internal/test"
+	version1 "github.com/goplus/gop/cmd/internal/version"
+	watch1 "github.com/goplus/gop/cmd/internal/watch"
 )
 
 const _ = true
 
+type bug struct {
+	xcmd.Command
+	*App
+}
+type build struct {
+	xcmd.Command
+	*App
+}
+type clean struct {
+	xcmd.Command
+	*App
+}
+type doc struct {
+	xcmd.Command
+	*App
+}
+type env struct {
+	xcmd.Command
+	*App
+}
+type gengo struct {
+	xcmd.Command
+	*App
+}
+type gopfmt struct {
+	xcmd.Command
+	*App
+}
+type gopget struct {
+	xcmd.Command
+	*App
+}
+type install struct {
+	xcmd.Command
+	*App
+}
+type mod struct {
+	xcmd.Command
+	*App
+}
+type mod_download struct {
+	xcmd.Command
+	*App
+}
+type mod_init struct {
+	xcmd.Command
+	*App
+}
+type mod_tidy struct {
+	xcmd.Command
+	*App
+}
+type run struct {
+	xcmd.Command
+	*App
+}
+type serve struct {
+	xcmd.Command
+	*App
+}
+type test struct {
+	xcmd.Command
+	*App
+}
 type version struct {
+	xcmd.Command
+	*App
+}
+type watch struct {
 	xcmd.Command
 	*App
 }
@@ -21,24 +100,298 @@ type App struct {
 }
 
 func (this *App) Main() {
-	_gop_obj0 := &version{App: this}
-	xcmd.Gopt_App_Main(this, _gop_obj0)
+	xcmd.Gopt_App_Main(this, new(bug), new(build), new(clean), new(doc), new(env), new(gengo), new(gopfmt), new(gopget), new(install), new(mod), new(mod_download), new(mod_init), new(mod_tidy), new(run), new(serve), new(test), new(version), new(watch))
 }
-//line cmd/xgo/version_cmd.gox:21
+//line cmd/xgo/bug_cmd.gox:5
+func (this *bug) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/bug_cmd.gox:5:1
+	this.Short("Start a bug report")
+//line cmd/xgo/bug_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/bug_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/bug_cmd.gox:10:1
+		bug1.Cmd.Run(bug1.Cmd, args)
+	})
+}
+func (this *bug) Classfname() string {
+	return "bug"
+}
+//line cmd/xgo/build_cmd.gox:5
+func (this *build) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/build_cmd.gox:5:1
+	this.Short("Build Go+ files")
+//line cmd/xgo/build_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/build_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/build_cmd.gox:10:1
+		build1.Cmd.Run(build1.Cmd, args)
+	})
+}
+func (this *build) Classfname() string {
+	return "build"
+}
+//line cmd/xgo/clean_cmd.gox:5
+func (this *clean) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/clean_cmd.gox:5:1
+	this.Short("Clean all Go+ auto generated files")
+//line cmd/xgo/clean_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/clean_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/clean_cmd.gox:10:1
+		clean1.Cmd.Run(clean1.Cmd, args)
+	})
+}
+func (this *clean) Classfname() string {
+	return "clean"
+}
+//line cmd/xgo/doc_cmd.gox:5
+func (this *doc) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/doc_cmd.gox:5:1
+	this.Short("Show documentation for package or symbol")
+//line cmd/xgo/doc_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/doc_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/doc_cmd.gox:10:1
+		doc1.Cmd.Run(doc1.Cmd, args)
+	})
+}
+func (this *doc) Classfname() string {
+	return "doc"
+}
+//line cmd/xgo/env_cmd.gox:5
+func (this *env) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/env_cmd.gox:5:1
+	this.Short("Prints Go+ environment information")
+//line cmd/xgo/env_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/env_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/env_cmd.gox:10:1
+		env1.Cmd.Run(env1.Cmd, args)
+	})
+}
+func (this *env) Classfname() string {
+	return "env"
+}
+//line cmd/xgo/gengo_cmd.gox:5
+func (this *gengo) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/gengo_cmd.gox:5:1
+	this.Short("Convert Go+ code into Go code")
+//line cmd/xgo/gengo_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/gengo_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/gengo_cmd.gox:10:1
+		gengo1.Cmd.Run(gengo1.Cmd, args)
+	})
+}
+func (this *gengo) Classfname() string {
+	return "gengo"
+}
+//line cmd/xgo/gopfmt_cmd.gox:5
+func (this *gopfmt) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/gopfmt_cmd.gox:5:1
+	this.Short("Format Go+ packages")
+//line cmd/xgo/gopfmt_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/gopfmt_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/gopfmt_cmd.gox:10:1
+		gopfmt1.Cmd.Run(gopfmt1.Cmd, args)
+	})
+}
+func (this *gopfmt) Classfname() string {
+	return "gopfmt"
+}
+//line cmd/xgo/gopget_cmd.gox:5
+func (this *gopget) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/gopget_cmd.gox:5:1
+	this.Short("Add dependencies to current module and install them")
+//line cmd/xgo/gopget_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/gopget_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/gopget_cmd.gox:10:1
+		gopget1.Cmd.Run(gopget1.Cmd, args)
+	})
+}
+func (this *gopget) Classfname() string {
+	return "gopget"
+}
+//line cmd/xgo/install_cmd.gox:5
+func (this *install) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/install_cmd.gox:5:1
+	this.Short("Build Go+ files and install target to GOBIN")
+//line cmd/xgo/install_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/install_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/install_cmd.gox:10:1
+		install1.Cmd.Run(install1.Cmd, args)
+	})
+}
+func (this *install) Classfname() string {
+	return "install"
+}
+//line cmd/xgo/mod_cmd.gox:16
+func (this *mod) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/mod_cmd.gox:16:1
+	this.Short("Module maintenance")
+//line cmd/xgo/mod_cmd.gox:18:1
+	this.Run__0(func() {
+//line cmd/xgo/mod_cmd.gox:19:1
+		this.Help()
+	})
+}
+func (this *mod) Classfname() string {
+	return "mod"
+}
+//line cmd/xgo/mod_download_cmd.gox:20
+func (this *mod_download) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/mod_download_cmd.gox:20:1
+	this.Short("Download modules to local cache")
+//line cmd/xgo/mod_download_cmd.gox:22:1
+	this.Long(`gop mod download [-x -json] [modules]
+`)
+//line cmd/xgo/mod_download_cmd.gox:25:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/mod_download_cmd.gox:26:1
+		mod1.Cmd.Commands[1].Run(mod1.Cmd.Commands[1], args)
+	})
+}
+func (this *mod_download) Classfname() string {
+	return "mod_download"
+}
+//line cmd/xgo/mod_init_cmd.gox:20
+func (this *mod_init) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/mod_init_cmd.gox:20:1
+	this.Short("Initialize new module in current directory")
+//line cmd/xgo/mod_init_cmd.gox:22:1
+	this.Long(`gop mod init [-llgo -tinygo] module-path
+`)
+//line cmd/xgo/mod_init_cmd.gox:25:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/mod_init_cmd.gox:26:1
+		mod1.Cmd.Commands[0].Run(mod1.Cmd.Commands[0], args)
+	})
+}
+func (this *mod_init) Classfname() string {
+	return "mod_init"
+}
+//line cmd/xgo/mod_tidy_cmd.gox:20
+func (this *mod_tidy) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/mod_tidy_cmd.gox:20:1
+	this.Short("Add missing and remove unused modules")
+//line cmd/xgo/mod_tidy_cmd.gox:22:1
+	this.Long(`gop mod tidy [-e -v]
+`)
+//line cmd/xgo/mod_tidy_cmd.gox:25:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/mod_tidy_cmd.gox:26:1
+		mod1.Cmd.Commands[2].Run(mod1.Cmd.Commands[2], args)
+	})
+}
+func (this *mod_tidy) Classfname() string {
+	return "mod_tidy"
+}
+//line cmd/xgo/run_cmd.gox:5
+func (this *run) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/run_cmd.gox:5:1
+	this.Short("Run a Go+ program")
+//line cmd/xgo/run_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/run_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/run_cmd.gox:10:1
+		run1.Cmd.Run(run1.Cmd, args)
+	})
+}
+func (this *run) Classfname() string {
+	return "run"
+}
+//line cmd/xgo/serve_cmd.gox:5
+func (this *serve) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/serve_cmd.gox:5:1
+	this.Short("Serve as a Go+ LangServer")
+//line cmd/xgo/serve_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/serve_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/serve_cmd.gox:10:1
+		serve1.Cmd.Run(serve1.Cmd, args)
+	})
+}
+func (this *serve) Classfname() string {
+	return "serve"
+}
+//line cmd/xgo/test_cmd.gox:5
+func (this *test) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/test_cmd.gox:5:1
+	this.Short("Test Go+ packages")
+//line cmd/xgo/test_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/test_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/test_cmd.gox:10:1
+		test1.Cmd.Run(test1.Cmd, args)
+	})
+}
+func (this *test) Classfname() string {
+	return "test"
+}
+//line cmd/xgo/version_cmd.gox:5
 func (this *version) Main(_gop_arg0 string) {
 	this.Command.Main(_gop_arg0)
-//line cmd/xgo/version_cmd.gox:21:1
+//line cmd/xgo/version_cmd.gox:5:1
 	this.Short("Print Go+ version")
-//line cmd/xgo/version_cmd.gox:23:1
-	this.Run__0(func() {
-//line cmd/xgo/version_cmd.gox:24:1
-		fmt.Println(stringutil.Concat("llgo ", env.Version(), " ", runtime.GOOS, "/", runtime.GOARCH))
+//line cmd/xgo/version_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/version_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/version_cmd.gox:10:1
+		version1.Cmd.Run(version1.Cmd, args)
 	})
 }
 func (this *version) Classfname() string {
 	return "version"
 }
+//line cmd/xgo/watch_cmd.gox:5
+func (this *watch) Main(_gop_arg0 string) {
+	this.Command.Main(_gop_arg0)
+//line cmd/xgo/watch_cmd.gox:5:1
+	this.Short("Monitor code changes in a Go+ workspace to generate Go files")
+//line cmd/xgo/watch_cmd.gox:7:1
+	this.FlagOff()
+//line cmd/xgo/watch_cmd.gox:9:1
+	this.Run__1(func(args []string) {
+//line cmd/xgo/watch_cmd.gox:10:1
+		watch1.Cmd.Run(watch1.Cmd, args)
+	})
+}
+func (this *watch) Classfname() string {
+	return "watch"
+}
 func main() {
-//line cmd/xgo/version_cmd.gox:23:1
+//line cmd/xgo/watch_cmd.gox:9:1
 	new(App).Main()
 }

@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/clean"
+)
+
+short "Clean all Go+ auto generated files"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

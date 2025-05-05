@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/run"
+)
+
+short "Run a Go+ program"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

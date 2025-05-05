@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/gopfmt"
+)
+
+short "Format Go+ packages"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

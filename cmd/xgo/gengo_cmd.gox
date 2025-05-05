@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/gengo"
+)
+
+short "Convert Go+ code into Go code"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

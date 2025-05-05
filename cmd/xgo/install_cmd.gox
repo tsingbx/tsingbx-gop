@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/install"
+)
+
+short "Build Go+ files and install target to GOBIN"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

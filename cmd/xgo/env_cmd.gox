@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/env"
+)
+
+short "Prints Go+ environment information"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

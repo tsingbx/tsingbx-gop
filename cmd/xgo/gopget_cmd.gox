@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/gopget"
+)
+
+short "Add dependencies to current module and install them"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}

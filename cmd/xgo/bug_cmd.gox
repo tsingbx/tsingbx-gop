@@ -1,0 +1,11 @@
+import (
+	self "github.com/goplus/gop/cmd/internal/bug"
+)
+
+short "Start a bug report"
+
+flagOff
+
+run args => {
+	self.Cmd.Run self.Cmd, args
+}
